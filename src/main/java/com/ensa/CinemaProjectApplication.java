@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ensa.controllers.MyController;
 import com.ensa.dao.AfficheDao;
 import com.ensa.dao.FilmAfficheDao;
 import com.ensa.dao.FilmDao;
@@ -79,6 +80,10 @@ public class CinemaProjectApplication implements CommandLineRunner{
 		List<Reservation> reservs = reservationDao.findAllByFilmAffiche(fa1);
 		for(Reservation r : reservs)
 			 System.err.println(r.getNomClient()+"--"+r.getPrenomClient()+"--"+r.getNumCarte());
+		
+//		MyController mc = new MyController();
+//		System.out.println(mc.getAffiches().size());
+		
 		
 	}
 }
